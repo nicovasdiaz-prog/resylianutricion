@@ -8,12 +8,10 @@
   <style>
     :root{
       --morado:#311C45;
-      --lila:#E9D9EF;
+      --lila:#f4eff6;
     }
 
-    *{
-      box-sizing:border-box;
-    }
+    *{ box-sizing:border-box; }
 
     html, body{
       margin:0;
@@ -22,102 +20,92 @@
 
     body{
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color:#111;
       background:#fff;
+      color:#111;
     }
 
-    /* HEADER */
-    header{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:16px 40px;
+    /* HEADER / HERO */
+    .topbar{
+      padding:40px 24px;
       background:#fff;
       border-bottom:1px solid rgba(0,0,0,.08);
     }
 
-    header img{
-      height:42px;
-      width:auto;
+    .topbar-inner{
+      max-width:1100px;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:1fr auto 1fr;
+      align-items:center;
     }
 
-    nav a{
-      margin-left:24px;
+    .brand{
+      text-align:center;
+    }
+
+    .brand img{
+      height:64px;
+      margin-bottom:12px;
+    }
+
+    .brand h1{
+      margin:0 0 16px;
+      font-size:28px;
+      letter-spacing:.25em;
+    }
+
+    .menu a{
+      margin:0 14px;
       text-decoration:none;
       color:#111;
       font-weight:500;
     }
 
-    /* HERO */
-    .hero{
-      min-height:70vh;
-      background-image:url("https://images.unsplash.com/photo-1543362906-acfc16c67564?auto=format&fit=crop&w=1600&q=70");
-      background-size:cover;
-      background-position:center;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:40px 24px;
+    .cta-box{
+      justify-self:end;
+      background:var(--lila);
+      padding:18px;
     }
 
-    .hero-card{
-      background:#fff;
-      padding:48px 40px;
-      max-width:420px;
-      width:100%;
-      text-align:center;
-      box-shadow:0 12px 30px rgba(0,0,0,.2);
-    }
-
-    .hero-card h1{
-      margin:0 0 12px;
-      font-size:32px;
-      letter-spacing:.08em;
-    }
-
-    .hero-card p{
-      margin:0 0 24px;
-      font-size:16px;
-    }
-
-    .btn{
+    .cta-btn{
       display:inline-block;
       background:var(--morado);
       color:#fff;
-      padding:14px 28px;
+      padding:14px 22px;
       text-decoration:none;
-      font-weight:600;
+      font-weight:700;
     }
 
-    /* ABOUT */
-    .about{
-      background:var(--lila);
+    /* SECCIONES */
+    .section{
       padding:80px 24px;
       text-align:center;
     }
 
-    .about h2{
+    .section.alt{
+      background:var(--lila);
+    }
+
+    .section h2{
       margin:0 0 16px;
       font-size:32px;
     }
 
-    .about p{
+    .section p{
       max-width:600px;
       margin:0 auto;
-      font-size:16px;
       line-height:1.6;
     }
 
     /* MOBILE */
     @media (max-width:768px){
-      header{
-        flex-direction:column;
-        gap:12px;
-        padding:16px;
+      .topbar-inner{
+        grid-template-columns:1fr;
+        gap:24px;
       }
 
-      nav a{
-        margin:0 12px;
+      .cta-box{
+        justify-self:center;
       }
     }
   </style>
@@ -125,16 +113,53 @@
 
 <body>
 
-  <header>
-    <img src="resylia_logo_morado_LIMPIO.png" alt="Resylia Nutrición">
-    <nav>
-      <a href="#inicio">Inicio</a>
-      <a href="#sobre">Sobre</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
+  <!-- HEADER -->
+  <header class="topbar">
+    <div class="topbar-inner">
+
+      <div></div>
+
+      <div class="brand">
+        <img src="resylia_logo_morado_LIMPIO.png" alt="Resylia Nutrición">
+        <h1>RESYLIA</h1>
+
+        <nav class="menu">
+          <a href="#inicio">Inicio</a>
+          <a href="#sobre">Sobre mí</a>
+          <a href="#contacto">Contacto</a>
+        </nav>
+      </div>
+
+      <div class="cta-box">
+        <a href="#contacto" class="cta-btn">QUIERO AGENDAR</a>
+      </div>
+
+    </div>
   </header>
 
-  <section class="hero" id="inicio">
-    <div class="hero-card">
-      <h1>RESYLIA</h1>
-      <p>Nutrición consciente para una vi
+  <!-- SECCIONES -->
+  <section class="section" id="inicio">
+    <h2>Nutrición consciente</h2>
+    <p>
+      Acompañamiento nutricional personalizado para mejorar tu bienestar,
+      rendimiento y salud a largo plazo.
+    </p>
+  </section>
+
+  <section class="section alt" id="sobre">
+    <h2>Sobre mí</h2>
+    <p>
+      Trabajo con un enfoque realista, sostenible y adaptado a cada persona,
+      priorizando hábitos que puedas mantener en el tiempo.
+    </p>
+  </section>
+
+  <section class="section" id="contacto">
+    <h2>Contacto</h2>
+    <p>
+      Escribeme y comuienza tu consulta.
+    </p>
+  </section>
+
+</body>
+</html>
