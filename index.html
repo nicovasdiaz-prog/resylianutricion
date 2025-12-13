@@ -1,44 +1,136 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Resylia Nutrición</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- Colores Resylia -->
   <style>
-    :root{
-      --morado:#311C45;
-      --morado-2:#4A2A66;
-      --lila:#F4EFF6;
-      --texto:#0F172A;
-      --muted:#5B5566;
+    :root {
+      --morado: #4B2E83;
+      --morado-claro: #6B4FA3;
+      --blanco: #ffffff;
+      --gris: #f5f5f7;
     }
 
-    *{ box-sizing:border-box; }
-
-    html, body{
-      margin:0;
-      padding:0;
+    * {
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      margin: 0;
+      padding: 0;
     }
 
-    body{
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color:var(--texto);
-      background:#fff;
+    body {
+      background: var(--gris);
+      color: #111;
     }
 
-    /* HERO */
-    .hero{
-      padding:120px 24px;
-      background:linear-gradient(135deg, var(--lila), #ffffff);
-      text-align:center;
+    header {
+      background: linear-gradient(135deg, var(--morado), var(--morado-claro));
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
     }
 
-    .hero-inner{
-      max-width:720px;
-      margin:0 auto;
+    header img {
+      width: 120px;
+      margin-bottom: 20px;
     }
 
-    .hero-logo{
+    nav {
+      margin-top: 20px;
+    }
 
-    
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 12px;
+      font-weight: 500;
+    }
+
+    .cta {
+      margin-top: 30px;
+    }
+
+    .cta a {
+      background: white;
+      color: var(--morado);
+      padding: 14px 26px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .socials a {
+      margin: 0 10px;
+      text-decoration: none;
+      font-size: 18px;
+      color: var(--morado);
+      font-weight: bold;
+    }
+
+    footer {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <img src="resylia_logo_blanco_LIMPIO.png" alt="Resylia Nutrición">
+  <h1>Resylia Nutrición</h1>
+  <p>Nutrición personalizada, cercana y consciente</p>
+
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#sobre">Sobre mí</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <div class="cta">
+    <a href="https://wa.me/56964875731" target="_blank">
+      QUIERO AGENDAR
+    </a>
+  </div>
+</header>
+
+<section id="sobre">
+  <h2>Sobre la nutricionista</h2>
+  <p>
+    Atención nutricional personalizada, enfocada en hábitos reales,
+    acompañamiento continuo y consultas 100% por WhatsApp Business.
+  </p>
+</section>
+
+<section id="contacto">
+  <h2>Contacto & Redes</h2>
+  <div class="socials">
+    <a href="https://www.instagram.com/nta.carrielcatalina" target="_blank">
+      Instagram
+    </a>
+    <a href="https://www.tiktok.com/@ccarriel_" target="_blank">
+      TikTok
+    </a>
+  </div>
+</section>
+
+<footer>
+  <p>© Resylia Nutrición</p>
+</footer>
+
+</body>
+</html>
