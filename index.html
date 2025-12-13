@@ -9,7 +9,7 @@
     :root {
       --morado: #4B2E83;
       --blanco: #ffffff;
-      --negro: #111111;
+      --gris: #f5f5f5;
       --verde: #25D366;
     }
 
@@ -21,16 +21,70 @@
     }
 
     body {
-      background: #fff;
+      background: white;
       color: #333;
     }
 
-    /* ===== HERO / CARRUSEL ===== */
+    /* ===== HEADER (NO SE TOCA) ===== */
+    header {
+      background: var(--morado);
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand img {
+      width: 40px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .cta {
+      background: white;
+      color: var(--morado);
+      padding: 10px 18px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* ===== HERO PRINCIPAL ===== */
     .hero {
-      position: relative;
+      background: var(--morado);
+      color: white;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+    }
+
+    /* ===== CARRUSEL ABAJO ===== */
+    .carousel {
       width: 100%;
-      height: 650px;
       overflow: hidden;
+      height: 650px;
+      margin-top: 40px;
     }
 
     .slides {
@@ -45,46 +99,6 @@
       height: 100%;
       background-size: cover;
       background-position: center;
-      position: relative;
-    }
-
-    .overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.45);
-      display: flex;
-      align-items: center;
-      padding-left: 8%;
-    }
-
-    .hero-content {
-      color: white;
-      max-width: 520px;
-    }
-
-    .hero-content img {
-      width: 70px;
-      margin-bottom: 20px;
-    }
-
-    .hero-content h1 {
-      font-size: 2.5rem;
-      margin-bottom: 15px;
-    }
-
-    .hero-content p {
-      font-size: 1.1rem;
-      margin-bottom: 25px;
-    }
-
-    .btn {
-      display: inline-block;
-      background: var(--verde);
-      color: white;
-      padding: 14px 28px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
     }
 
     @keyframes slide {
@@ -105,39 +119,21 @@
       margin: auto;
     }
 
-    .section h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
-
     /* ===== REDES ===== */
     .redes {
       display: flex;
       justify-content: center;
       gap: 25px;
-      margin-top: 25px;
+      margin-top: 20px;
     }
 
     .redes a svg {
       width: 32px;
       height: 32px;
       fill: var(--morado);
-      transition: transform 0.2s ease;
     }
 
-    .redes a:hover svg {
-      transform: scale(1.1);
-    }
-
-    /* ===== FOOTER ===== */
-    footer {
-      background: #111;
-      color: white;
-      padding: 25px;
-      text-align: center;
-    }
-
-    /* ===== BOTÓN WHATSAPP ===== */
+    /* ===== WHATSAPP ===== */
     .wsp {
       position: fixed;
       right: 20px;
@@ -159,20 +155,13 @@
 
     /* ===== MOBILE ===== */
     @media (max-width: 768px) {
-      .hero {
-        height: 420px;
+      header {
+        gap: 15px;
+        justify-content: center;
       }
 
-      .overlay {
-        padding: 20px;
-      }
-
-      .hero-content h1 {
-        font-size: 1.8rem;
-      }
-
-      .hero-content img {
-        width: 55px;
+      .carousel {
+        height: 380px;
       }
     }
   </style>
@@ -180,75 +169,57 @@
 
 <body>
 
-  <!-- HERO / CARRUSEL -->
-  <section class="hero">
-    <div class="slides">
-
-      <div class="slide" style="background-image:url('banner1.jpg')">
-        <div class="overlay">
-          <div class="hero-content">
-            <img src="resylia_logo_blanco_LIMPIO.png" alt="Resylia">
-            <h1>¿Te quieres sentir escuchada más allá de las dietas?</h1>
-            <p>Conversemos, te escucho.</p>
-            <a class="btn" href="https://wa.me/56964875731" target="_blank">Agenda tu hora</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="slide" style="background-image:url('banner2.jpg')">
-        <div class="overlay">
-          <div class="hero-content">
-            <img src="resylia_logo_blanco_LIMPIO.png" alt="Resylia">
-            <h1>Nutrición consciente y sin restricciones</h1>
-            <p>Un proceso real y humano.</p>
-            <a class="btn" href="https://wa.me/56964875731" target="_blank">Agenda tu hora</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="slide" style="background-image:url('banner3.jpg')">
-        <div class="overlay">
-          <div class="hero-content">
-            <img src="resylia_logo_blanco_LIMPIO.png" alt="Resylia">
-            <h1>Te acompaño en cada paso</h1>
-            <p>No estás sola en este camino.</p>
-            <a class="btn" href="https://wa.me/56964875731" target="_blank">Agenda tu hora</a>
-          </div>
-        </div>
-      </div>
-
+<header>
+  <div class="brand">
+    <img src="resylia_logo_blanco_LIMPIO.png" alt="Resylia">
+    <div>
+      <strong>Resylia Nutrición</strong><br>
+      <small>Nutrición personalizada, cercana y consciente</small>
     </div>
-  </section>
+  </div>
 
-  <!-- INFO -->
-  <section class="section">
-    <h2>Sobre la nutricionista</h2>
-    <p>
-      Atención nutricional personalizada, enfocada en hábitos reales,
-      acompañamiento continuo y consultas 100% por WhatsApp Business.
-    </p>
+  <nav>
+    <a href="#">Inicio</a>
+    <a href="#">Sobre mí</a>
+    <a href="#">Contacto</a>
+  </nav>
 
-    <div class="redes">
-      <!-- Instagram -->
-      <a href="https://www.instagram.com/nta.carrielcatalina" target="_blank" aria-label="Instagram">
-        <svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6.5-.5a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></svg>
-      </a>
+  <a class="cta" href="https://wa.me/56964875731" target="_blank">QUIERO AGENDAR</a>
+</header>
 
-      <!-- TikTok -->
-      <a href="https://www.tiktok.com/@ccarriel_" target="_blank" aria-label="TikTok">
-        <svg viewBox="0 0 24 24"><path d="M16 2c1 2 3 3 5 3v4c-2 0-4-1-5-2v7a6 6 0 1 1-6-6v4a2 2 0 1 0 2 2V2h4z"/></svg>
-      </a>
-    </div>
-  </section>
+<section class="hero">
+  <h1>Nutrición consciente, sin dietas</h1>
+  <p>Un proceso cercano, real y acompañado</p>
+</section>
 
-  <footer>
-    © Resylia Nutrición
-  </footer>
+<section class="carousel">
+  <div class="slides">
+    <div class="slide" style="background-image:url('banner1.jpg')"></div>
+    <div class="slide" style="background-image:url('banner2.jpg')"></div>
+    <div class="slide" style="background-image:url('banner3.jpg')"></div>
+  </div>
+</section>
 
-  <!-- WHATSAPP -->
-  <a class="wsp" href="https://wa.me/56964875731" target="_blank" aria-label="WhatsApp">
-    <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15l-1.4 5 5-1.3A10 10 0 1 0 12 2z"/></svg>
-  </a>
+<section class="section">
+  <h2>Sobre la nutricionista</h2>
+  <p>
+    Atención nutricional personalizada, enfocada en hábitos reales,
+    acompañamiento continuo y consultas 100% por WhatsApp Business.
+  </p>
+
+  <div class="redes">
+    <a href="https://www.instagram.com/nta.carrielcatalina" target="_blank" aria-label="Instagram">
+      <svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5z"/></svg>
+    </a>
+    <a href="https://www.tiktok.com/@ccarriel_" target="_blank" aria-label="TikTok">
+      <svg viewBox="0 0 24 24"><path d="M16 2c1 2 3 3 5 3v4c-2 0-4-1-5-2v7a6 6 0 1 1-6-6v4a2 2 0 1 0 2 2V2h4z"/></svg>
+    </a>
+  </div>
+</section>
+
+<a class="wsp" href="https://wa.me/56964875731" target="_blank" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15l-1.4 5 5-1.3A10 10 0 1 0 12 2z"/></svg>
+</a>
 
 </body>
 </html>
