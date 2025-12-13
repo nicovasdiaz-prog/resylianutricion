@@ -5,160 +5,188 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Resylia Nutrición</title>
 
+<!-- Iconos reales -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 <style>
-:root {
-  --morado: #4B2E83;
-  --verde: #25D366;
-  --gris: #f5f5f5;
+:root{
+  --morado:#4B2E83;
+  --verde:#25D366;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,sans-serif;
 }
 
-body {
-  background: #fff;
-  color: #333;
+body{
+  background:#fff;
+  color:#333;
 }
 
 /* ================= HEADER ================= */
-header {
-  background: var(--morado);
-  color: #fff;
-  padding: 18px 32px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
+header{
+  background:var(--morado);
+  color:#fff;
+  padding:14px 28px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
 }
 
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
 }
 
-.brand img {
-  width: 40px;
+.brand img{width:36px}
+
+nav a{
+  color:#fff;
+  margin:0 10px;
+  text-decoration:none;
+  font-weight:500;
 }
 
-nav a {
-  color: #fff;
-  margin: 0 10px;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.cta {
-  background: #fff;
-  color: var(--morado);
-  padding: 10px 18px;
-  border-radius: 14px;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-/* ================= HERO ================= */
-.hero {
-  background: var(--morado);
-  color: #fff;
-  text-align: center;
-  padding: 90px 20px;
-}
-
-.hero h1 {
-  font-size: 2.4rem;
-  margin-bottom: 10px;
-}
-
-.hero p {
-  font-size: 1.1rem;
-  opacity: 0.9;
+.cta{
+  background:#fff;
+  color:var(--morado);
+  padding:8px 16px;
+  border-radius:14px;
+  text-decoration:none;
+  font-weight:600;
 }
 
 /* ================= CARRUSEL ================= */
-.carousel {
-  width: 100%;
-  height: 420px;
-  overflow: hidden;
-  background: #ddd;
+.carousel{
+  position:relative;
+  width:100%;
+  height:420px;
+  overflow:hidden;
+  background:#000;
 }
 
-.slides {
-  display: flex;
-  width: 300%;
-  height: 100%;
-  animation: slide 36s infinite;
+.slide{
+  position:absolute;
+  inset:0;
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:contain;
+  opacity:0;
+  transition:opacity 1s ease;
 }
 
-.slide {
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  flex-shrink: 0;
+.slide.active{opacity:1}
+
+.slide::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.35);
 }
 
-/* Carrusel lento y estable */
-@keyframes slide {
-  0%, 30% { transform: translateX(0); }
-  33%, 63% { transform: translateX(-100%); }
-  66%, 96% { transform: translateX(-200%); }
-  100% { transform: translateX(0); }
+.slide-text{
+  position:relative;
+  z-index:2;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  color:#fff;
+  padding:20px;
 }
+
+.slide-text h2{
+  font-size:2.2rem;
+  margin-bottom:10px;
+}
+
+.slide-text p{
+  font-size:1.1rem;
+  max-width:600px;
+}
+
+/* Puntitos */
+.carousel-dots{
+  position:absolute;
+  bottom:14px;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  gap:10px;
+  z-index:5;
+}
+
+.dot{
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:#fff;
+  opacity:.4;
+  cursor:pointer;
+}
+
+.dot.active{opacity:1;background:#fff}
 
 /* ================= CONTENIDO ================= */
-.section {
-  max-width: 1000px;
-  margin: auto;
-  padding: 70px 20px;
-  text-align: center;
+.section{
+  max-width:1000px;
+  margin:auto;
+  padding:70px 20px;
+  text-align:center;
 }
 
-.section h2 {
-  margin-bottom: 14px;
+.section h2{margin-bottom:14px}
+
+/* Redes */
+.socials{
+  display:flex;
+  justify-content:center;
+  gap:26px;
+  margin-top:20px;
+  font-size:28px;
 }
+
+.socials a{color:var(--morado)}
 
 /* ================= WHATSAPP ================= */
-.wsp {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  width: 56px;
-  height: 56px;
-  background: var(--verde);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-size: 26px;
-  text-decoration: none;
+.wsp{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  width:56px;
+  height:56px;
+  background:var(--verde);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  font-size:26px;
+  text-decoration:none;
+  z-index:999;
 }
 
 /* ================= MOBILE ================= */
-@media (max-width: 768px) {
-  header {
-    justify-content: center;
-    gap: 14px;
-    text-align: center;
+@media(max-width:768px){
+  header{
+    justify-content:center;
+    gap:12px;
+    text-align:center;
   }
 
-  nav {
-    width: 100%;
-    margin: 10px 0;
-  }
+  nav{width:100%;margin-top:6px}
 
-  .hero h1 {
-    font-size: 1.9rem;
-  }
+  .carousel{height:260px}
 
-  .carousel {
-    height: 260px;
-  }
+  .slide-text h2{font-size:1.5rem}
+  .slide-text p{font-size:1rem}
 }
 </style>
 </head>
@@ -167,7 +195,7 @@ nav a {
 
 <header>
   <div class="brand">
-    <img src="resylia_logo_blanco_LIMPIO.png" alt="Resylia Nutrición">
+    <img src="resylia_logo_blanco_LIMPIO.png" alt="Resylia">
     <div>
       <strong>Resylia Nutrición</strong><br>
       <small>Nutrición personalizada, cercana y consciente</small>
@@ -183,16 +211,33 @@ nav a {
   <a class="cta" href="https://wa.me/56964875731" target="_blank">QUIERO AGENDAR</a>
 </header>
 
-<section class="hero">
-  <h1>Nutrición consciente, sin dietas</h1>
-  <p>Un proceso real, acompañado y humano</p>
-</section>
-
+<!-- CARRUSEL -->
 <section class="carousel">
-  <div class="slides">
-    <div class="slide" style="background-image:url('banner1.jpg')"></div>
-    <div class="slide" style="background-image:url('banner2.jpg')"></div>
-    <div class="slide" style="background-image:url('banner3.jpg')"></div>
+  <div class="slide active" style="background-image:url('banner1.jpg')">
+    <div class="slide-text">
+      <h2>Nutrición consciente</h2>
+      <p>Un proceso real, humano y sin dietas</p>
+    </div>
+  </div>
+
+  <div class="slide" style="background-image:url('banner2.jpg')">
+    <div class="slide-text">
+      <h2>Escucha y acompañamiento</h2>
+      <p>Tu historia importa más que la balanza</p>
+    </div>
+  </div>
+
+  <div class="slide" style="background-image:url('banner3.jpg')">
+    <div class="slide-text">
+      <h2>Hábitos que perduran</h2>
+      <p>Construidos contigo, paso a paso</p>
+    </div>
+  </div>
+
+  <div class="carousel-dots">
+    <span class="dot active"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
   </div>
 </section>
 
@@ -202,9 +247,42 @@ nav a {
     Atención nutricional personalizada, enfocada en hábitos reales,
     acompañamiento continuo y consultas 100% por WhatsApp Business.
   </p>
+
+  <div class="socials">
+    <a href="https://www.instagram.com/nta.carrielcatalina" target="_blank">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://www.tiktok.com/@ccarriel_" target="_blank">
+      <i class="fab fa-tiktok"></i>
+    </a>
+  </div>
 </section>
 
-<a class="wsp" href="https://wa.me/56964875731" target="_blank">💬</a>
+<a class="wsp" href="https://wa.me/56964875731" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<script>
+const slides=document.querySelectorAll(".slide");
+const dots=document.querySelectorAll(".dot");
+let current=0;
+
+function showSlide(i){
+  slides[current].classList.remove("active");
+  dots[current].classList.remove("active");
+  current=i;
+  slides[current].classList.add("active");
+  dots[current].classList.add("active");
+}
+
+dots.forEach((dot,i)=>{
+  dot.addEventListener("click",()=>showSlide(i));
+});
+
+setInterval(()=>{
+  showSlide((current+1)%slides.length);
+},6000);
+</script>
 
 </body>
 </html>
