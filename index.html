@@ -1,211 +1,173 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Resylia Nutrición</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resylia Nutrición</title>
 
-  <style>
-    :root {
-      --morado: #4B2E83;
-      --blanco: #ffffff;
-      --verde: #25D366;
-      --gris: #f5f5f5;
-    }
+<style>
+:root {
+  --morado: #4B2E83;
+  --verde: #25D366;
+  --gris: #f5f5f5;
+}
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-    }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
 
-    body {
-      background: white;
-      color: #333;
-    }
+body {
+  background: #fff;
+  color: #333;
+}
 
-    /* ================= HEADER ================= */
-    header {
-      background: var(--morado);
-      color: white;
-      padding: 20px 40px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
+/* ================= HEADER ================= */
+header {
+  background: var(--morado);
+  color: #fff;
+  padding: 18px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
 
-    .brand img {
-      width: 42px;
-    }
+.brand img {
+  width: 40px;
+}
 
-    .brand strong {
-      font-size: 1.2rem;
-    }
+nav a {
+  color: #fff;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: 500;
+}
 
-    .brand small {
-      font-size: 0.85rem;
-      opacity: 0.9;
-    }
+.cta {
+  background: #fff;
+  color: var(--morado);
+  padding: 10px 18px;
+  border-radius: 14px;
+  text-decoration: none;
+  font-weight: 600;
+}
 
-    nav {
-      display: flex;
-      gap: 20px;
-    }
+/* ================= HERO ================= */
+.hero {
+  background: var(--morado);
+  color: #fff;
+  text-align: center;
+  padding: 90px 20px;
+}
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-    }
+.hero h1 {
+  font-size: 2.4rem;
+  margin-bottom: 10px;
+}
 
-    .cta {
-      background: white;
-      color: var(--morado);
-      padding: 12px 22px;
-      border-radius: 14px;
-      text-decoration: none;
-      font-weight: 600;
-      white-space: nowrap;
-    }
+.hero p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
 
-    /* ================= HERO TEXTO ================= */
-    .hero {
-      background: var(--morado);
-      color: white;
-      text-align: center;
-      padding: 90px 20px;
-    }
+/* ================= CARRUSEL ================= */
+.carousel {
+  width: 100%;
+  height: 420px;
+  overflow: hidden;
+  background: #ddd;
+}
 
-    .hero h1 {
-      font-size: 2.3rem;
-      margin-bottom: 15px;
-    }
+.slides {
+  display: flex;
+  width: 300%;
+  height: 100%;
+  animation: slide 36s infinite;
+}
 
-    .hero p {
-      font-size: 1.1rem;
-      opacity: 0.95;
-    }
+.slide {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  flex-shrink: 0;
+}
 
-    /* ================= CARRUSEL ================= */
-    .carousel {
-      width: 100%;
-      height: 650px;
-      overflow: hidden;
-      margin-top: 40px;
-    }
+/* Carrusel lento y estable */
+@keyframes slide {
+  0%, 30% { transform: translateX(0); }
+  33%, 63% { transform: translateX(-100%); }
+  66%, 96% { transform: translateX(-200%); }
+  100% { transform: translateX(0); }
+}
 
-    .slides {
-      display: flex;
-      width: 300%;
-      height: 100%;
-      animation: slide 30s infinite;
-    }
+/* ================= CONTENIDO ================= */
+.section {
+  max-width: 1000px;
+  margin: auto;
+  padding: 70px 20px;
+  text-align: center;
+}
 
-    .slide {
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      background-position: center;
-      flex-shrink: 0;
-    }
+.section h2 {
+  margin-bottom: 14px;
+}
 
-    @keyframes slide {
-      0%   { transform: translateX(0); }
-      25%  { transform: translateX(0); }
+/* ================= WHATSAPP ================= */
+.wsp {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 56px;
+  height: 56px;
+  background: var(--verde);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 26px;
+  text-decoration: none;
+}
 
-      33%  { transform: translateX(-100%); }
-      58%  { transform: translateX(-100%); }
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  header {
+    justify-content: center;
+    gap: 14px;
+    text-align: center;
+  }
 
-      66%  { transform: translateX(-200%); }
-      91%  { transform: translateX(-200%); }
+  nav {
+    width: 100%;
+    margin: 10px 0;
+  }
 
-      100% { transform: translateX(0); }
-    }
+  .hero h1 {
+    font-size: 1.9rem;
+  }
 
-    /* ================= INFO ================= */
-    .section {
-      padding: 70px 20px;
-      text-align: center;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    .section h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
-
-    /* ================= REDES ================= */
-    .redes {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      margin-top: 25px;
-    }
-
-    .redes a svg {
-      width: 32px;
-      height: 32px;
-      fill: var(--morado);
-    }
-
-    /* ================= WHATSAPP ================= */
-    .wsp {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      width: 55px;
-      height: 55px;
-      background: var(--verde);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-    }
-
-    .wsp svg {
-      width: 26px;
-      fill: white;
-    }
-
-    /* ================= MOBILE ================= */
-    @media (max-width: 768px) {
-      header {
-        justify-content: center;
-        gap: 18px;
-        text-align: center;
-      }
-
-      nav {
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-
-      .hero h1 {
-        font-size: 1.8rem;
-      }
-
-      .carousel {
-        height: 380px;
-      }
-    }
-  </style>
+  .carousel {
+    height: 260px;
+  }
+}
+</style>
 </head>
 
 <body>
 
 <header>
   <div class="brand">
-    <img src="resylia_logo_blanco_LIMPIO.png" alt="Resylia">
+    <img src="resylia_logo_blanco_LIMPIO.png" alt="Resylia Nutrición">
     <div>
       <strong>Resylia Nutrición</strong><br>
       <small>Nutrición personalizada, cercana y consciente</small>
@@ -218,9 +180,7 @@
     <a href="#">Contacto</a>
   </nav>
 
-  <a class="cta" href="https://wa.me/56964875731" target="_blank">
-    QUIERO AGENDAR
-  </a>
+  <a class="cta" href="https://wa.me/56964875731" target="_blank">QUIERO AGENDAR</a>
 </header>
 
 <section class="hero">
@@ -230,4 +190,21 @@
 
 <section class="carousel">
   <div class="slides">
-    <
+    <div class="slide" style="background-image:url('banner1.jpg')"></div>
+    <div class="slide" style="background-image:url('banner2.jpg')"></div>
+    <div class="slide" style="background-image:url('banner3.jpg')"></div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Sobre la nutricionista</h2>
+  <p>
+    Atención nutricional personalizada, enfocada en hábitos reales,
+    acompañamiento continuo y consultas 100% por WhatsApp Business.
+  </p>
+</section>
+
+<a class="wsp" href="https://wa.me/56964875731" target="_blank">💬</a>
+
+</body>
+</html>
