@@ -8,10 +8,9 @@
   <style>
     :root {
       --morado: #4B2E83;
-      --morado-claro: #6B4FA3;
       --blanco: #ffffff;
-      --gris: #f5f5f7;
       --negro: #111111;
+      --verde: #25D366;
     }
 
     * {
@@ -22,159 +21,158 @@
     }
 
     body {
-      background: var(--gris);
-      color: var(--negro);
+      background: #fff;
+      color: #333;
     }
 
-    /* ================= HEADER / HERO ================= */
-
-    .topbar {
-      background: linear-gradient(135deg, var(--morado), var(--morado-claro));
-      color: white;
-      padding: 32px 20px 48px;
+    /* ===== HERO / CARRUSEL ===== */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 650px;
+      overflow: hidden;
     }
 
-    .topbar-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      align-items: center;
-      gap: 24px;
+    .slides {
+      display: flex;
+      width: 300%;
+      height: 100%;
+      animation: slide 18s infinite;
     }
 
-    /* Brand */
-    .brand {
-      grid-column: 1;
+    .slide {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
       display: flex;
       align-items: center;
-      gap: 14px;
+      padding-left: 8%;
     }
 
-    .brand-logo {
-      width: 64px;
-      height: auto;
-    }
-
-    .brand-text {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .brand-name {
-      font-size: 28px;
-      font-weight: 800;
-      line-height: 1.1;
-    }
-
-    .brand-sub {
-      font-size: 14px;
-      opacity: 0.9;
-    }
-
-    /* Nav */
-    .nav {
-      grid-column: 2;
-      display: flex;
-      gap: 22px;
-      justify-content: center;
-    }
-
-    .nav a {
+    .hero-content {
       color: white;
+      max-width: 520px;
+    }
+
+    .hero-content img {
+      width: 70px;
+      margin-bottom: 20px;
+    }
+
+    .hero-content h1 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+
+    .hero-content p {
+      font-size: 1.1rem;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--verde);
+      color: white;
+      padding: 14px 28px;
+      border-radius: 6px;
       text-decoration: none;
       font-weight: 600;
-      opacity: 0.95;
     }
 
-    .nav a:hover {
-      text-decoration: underline;
-      opacity: 1;
+    @keyframes slide {
+      0% { transform: translateX(0); }
+      30% { transform: translateX(0); }
+      33% { transform: translateX(-100%); }
+      63% { transform: translateX(-100%); }
+      66% { transform: translateX(-200%); }
+      96% { transform: translateX(-200%); }
+      100% { transform: translateX(0); }
     }
 
-    /* CTA */
-    .cta-box {
-      grid-column: 3;
-      justify-self: end;
-      background: rgba(255, 255, 255, 0.15);
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      padding: 10px;
-      border-radius: 14px;
-      backdrop-filter: blur(8px);
-    }
-
-    .cta-btn {
-      background: white;
-      color: var(--morado);
-      padding: 12px 20px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 800;
-      display: inline-block;
-    }
-
-    /* ================= SECTIONS ================= */
-
-    section {
-      max-width: 900px;
-      margin: 70px auto;
-      padding: 0 20px;
+    /* ===== INFO ===== */
+    .section {
+      padding: 70px 20px;
       text-align: center;
+      max-width: 1000px;
+      margin: auto;
     }
 
-    section h2 {
-      font-size: 26px;
-      margin-bottom: 14px;
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
     }
 
-    section p {
-      font-size: 16px;
-      line-height: 1.6;
-    }
-
-    /* ================= SOCIALS ================= */
-
-    .socials {
-      margin-top: 20px;
+    /* ===== REDES ===== */
+    .redes {
       display: flex;
       justify-content: center;
-      gap: 24px;
+      gap: 25px;
+      margin-top: 25px;
     }
 
-    .socials a {
-      text-decoration: none;
-      font-weight: 700;
-      color: var(--morado);
+    .redes a svg {
+      width: 32px;
+      height: 32px;
+      fill: var(--morado);
+      transition: transform 0.2s ease;
     }
 
-    /* ================= FOOTER ================= */
+    .redes a:hover svg {
+      transform: scale(1.1);
+    }
 
+    /* ===== FOOTER ===== */
     footer {
-      background: var(--negro);
+      background: #111;
       color: white;
+      padding: 25px;
       text-align: center;
-      padding: 30px 20px;
-      margin-top: 80px;
     }
 
-    /* ================= RESPONSIVE ================= */
+    /* ===== BOTÓN WHATSAPP ===== */
+    .wsp {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 55px;
+      height: 55px;
+      background: var(--verde);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
 
-    @media (max-width: 900px) {
-      .topbar-inner {
-        grid-template-columns: 1fr;
-        text-align: center;
+    .wsp svg {
+      width: 26px;
+      fill: white;
+    }
+
+    /* ===== MOBILE ===== */
+    @media (max-width: 768px) {
+      .hero {
+        height: 420px;
       }
 
-      .brand {
-        justify-content: center;
+      .overlay {
+        padding: 20px;
       }
 
-      .nav {
-        margin: 18px 0;
+      .hero-content h1 {
+        font-size: 1.8rem;
       }
 
-      .cta-box {
-        justify-self: center;
+      .hero-content img {
+        width: 55px;
       }
     }
   </style>
@@ -182,68 +180,75 @@
 
 <body>
 
-  <!-- ================= HEADER ================= -->
-  <header class="topbar" id="inicio">
-    <div class="topbar-inner">
+  <!-- HERO / CARRUSEL -->
+  <section class="hero">
+    <div class="slides">
 
-      <div class="brand">
-        <img
-          src="resylia_logo_blanco_LIMPIO.png"
-          alt="Resylia Nutrición"
-          class="brand-logo"
-        />
-        <div class="brand-text">
-          <div class="brand-name">Resylia Nutrición</div>
-          <div class="brand-sub">Nutrición personalizada, cercana y consciente</div>
+      <div class="slide" style="background-image:url('banner1.jpg')">
+        <div class="overlay">
+          <div class="hero-content">
+            <img src="resylia_logo_blanco_LIMPIO.png" alt="Resylia">
+            <h1>¿Te quieres sentir escuchada más allá de las dietas?</h1>
+            <p>Conversemos, te escucho.</p>
+            <a class="btn" href="https://wa.me/56964875731" target="_blank">Agenda tu hora</a>
+          </div>
         </div>
       </div>
 
-      <nav class="nav">
-        <a href="#inicio">Inicio</a>
-        <a href="#sobre">Sobre mí</a>
-        <a href="#contacto">Contacto</a>
-      </nav>
+      <div class="slide" style="background-image:url('banner2.jpg')">
+        <div class="overlay">
+          <div class="hero-content">
+            <img src="resylia_logo_blanco_LIMPIO.png" alt="Resylia">
+            <h1>Nutrición consciente y sin restricciones</h1>
+            <p>Un proceso real y humano.</p>
+            <a class="btn" href="https://wa.me/56964875731" target="_blank">Agenda tu hora</a>
+          </div>
+        </div>
+      </div>
 
-      <div class="cta-box">
-        <a
-          href="https://wa.me/56964875731"
-          target="_blank"
-          class="cta-btn"
-        >
-          QUIERO AGENDAR
-        </a>
+      <div class="slide" style="background-image:url('banner3.jpg')">
+        <div class="overlay">
+          <div class="hero-content">
+            <img src="resylia_logo_blanco_LIMPIO.png" alt="Resylia">
+            <h1>Te acompaño en cada paso</h1>
+            <p>No estás sola en este camino.</p>
+            <a class="btn" href="https://wa.me/56964875731" target="_blank">Agenda tu hora</a>
+          </div>
+        </div>
       </div>
 
     </div>
-  </header>
+  </section>
 
-  <!-- ================= SOBRE ================= -->
-  <section id="sobre">
+  <!-- INFO -->
+  <section class="section">
     <h2>Sobre la nutricionista</h2>
     <p>
       Atención nutricional personalizada, enfocada en hábitos reales,
-      acompañamiento continuo y consultas 100% a través de WhatsApp Business.
+      acompañamiento continuo y consultas 100% por WhatsApp Business.
     </p>
-  </section>
 
-  <!-- ================= CONTACTO ================= -->
-  <section id="contacto">
-    <h2>Contacto & Redes</h2>
-
-    <div class="socials">
-      <a href="https://www.instagram.com/nta.carrielcatalina" target="_blank">
-        Instagram
+    <div class="redes">
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/nta.carrielcatalina" target="_blank" aria-label="Instagram">
+        <svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6.5-.5a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></svg>
       </a>
-      <a href="https://www.tiktok.com/@ccarriel_" target="_blank">
-        TikTok
+
+      <!-- TikTok -->
+      <a href="https://www.tiktok.com/@ccarriel_" target="_blank" aria-label="TikTok">
+        <svg viewBox="0 0 24 24"><path d="M16 2c1 2 3 3 5 3v4c-2 0-4-1-5-2v7a6 6 0 1 1-6-6v4a2 2 0 1 0 2 2V2h4z"/></svg>
       </a>
     </div>
   </section>
 
-  <!-- ================= FOOTER ================= -->
   <footer>
     © Resylia Nutrición
   </footer>
+
+  <!-- WHATSAPP -->
+  <a class="wsp" href="https://wa.me/56964875731" target="_blank" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15l-1.4 5 5-1.3A10 10 0 1 0 12 2z"/></svg>
+  </a>
 
 </body>
 </html>
