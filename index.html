@@ -9,8 +9,8 @@
     :root {
       --morado: #4B2E83;
       --blanco: #ffffff;
-      --gris: #f5f5f5;
       --verde: #25D366;
+      --gris: #f5f5f5;
     }
 
     * {
@@ -25,7 +25,7 @@
       color: #333;
     }
 
-    /* ===== HEADER (NO SE TOCA) ===== */
+    /* ================= HEADER ================= */
     header {
       background: var(--morado);
       color: white;
@@ -39,16 +39,29 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
     }
 
     .brand img {
-      width: 40px;
+      width: 42px;
+    }
+
+    .brand strong {
+      font-size: 1.2rem;
+    }
+
+    .brand small {
+      font-size: 0.85rem;
+      opacity: 0.9;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
     }
 
     nav a {
       color: white;
-      margin: 0 10px;
       text-decoration: none;
       font-weight: 500;
     }
@@ -56,34 +69,36 @@
     .cta {
       background: white;
       color: var(--morado);
-      padding: 10px 18px;
-      border-radius: 10px;
+      padding: 12px 22px;
+      border-radius: 14px;
       text-decoration: none;
       font-weight: 600;
+      white-space: nowrap;
     }
 
-    /* ===== HERO PRINCIPAL ===== */
+    /* ================= HERO TEXTO ================= */
     .hero {
       background: var(--morado);
       color: white;
       text-align: center;
-      padding: 80px 20px;
+      padding: 90px 20px;
     }
 
     .hero h1 {
-      font-size: 2.2rem;
+      font-size: 2.3rem;
       margin-bottom: 15px;
     }
 
     .hero p {
       font-size: 1.1rem;
+      opacity: 0.95;
     }
 
-    /* ===== CARRUSEL ABAJO ===== */
+    /* ================= CARRUSEL ================= */
     .carousel {
       width: 100%;
-      overflow: hidden;
       height: 650px;
+      overflow: hidden;
       margin-top: 40px;
     }
 
@@ -91,7 +106,7 @@
       display: flex;
       width: 300%;
       height: 100%;
-      animation: slide 18s infinite;
+      animation: slide 30s infinite;
     }
 
     .slide {
@@ -99,19 +114,23 @@
       height: 100%;
       background-size: cover;
       background-position: center;
+      flex-shrink: 0;
     }
 
     @keyframes slide {
-      0% { transform: translateX(0); }
-      30% { transform: translateX(0); }
-      33% { transform: translateX(-100%); }
-      63% { transform: translateX(-100%); }
-      66% { transform: translateX(-200%); }
-      96% { transform: translateX(-200%); }
+      0%   { transform: translateX(0); }
+      25%  { transform: translateX(0); }
+
+      33%  { transform: translateX(-100%); }
+      58%  { transform: translateX(-100%); }
+
+      66%  { transform: translateX(-200%); }
+      91%  { transform: translateX(-200%); }
+
       100% { transform: translateX(0); }
     }
 
-    /* ===== INFO ===== */
+    /* ================= INFO ================= */
     .section {
       padding: 70px 20px;
       text-align: center;
@@ -119,12 +138,17 @@
       margin: auto;
     }
 
-    /* ===== REDES ===== */
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    /* ================= REDES ================= */
     .redes {
       display: flex;
       justify-content: center;
-      gap: 25px;
-      margin-top: 20px;
+      gap: 30px;
+      margin-top: 25px;
     }
 
     .redes a svg {
@@ -133,7 +157,7 @@
       fill: var(--morado);
     }
 
-    /* ===== WHATSAPP ===== */
+    /* ================= WHATSAPP ================= */
     .wsp {
       position: fixed;
       right: 20px;
@@ -153,11 +177,21 @@
       fill: white;
     }
 
-    /* ===== MOBILE ===== */
+    /* ================= MOBILE ================= */
     @media (max-width: 768px) {
       header {
-        gap: 15px;
         justify-content: center;
+        gap: 18px;
+        text-align: center;
+      }
+
+      nav {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .hero h1 {
+        font-size: 1.8rem;
       }
 
       .carousel {
@@ -184,42 +218,16 @@
     <a href="#">Contacto</a>
   </nav>
 
-  <a class="cta" href="https://wa.me/56964875731" target="_blank">QUIERO AGENDAR</a>
+  <a class="cta" href="https://wa.me/56964875731" target="_blank">
+    QUIERO AGENDAR
+  </a>
 </header>
 
 <section class="hero">
   <h1>Nutrición consciente, sin dietas</h1>
-  <p>Un proceso cercano, real y acompañado</p>
+  <p>Un proceso real, acompañado y humano</p>
 </section>
 
 <section class="carousel">
   <div class="slides">
-    <div class="slide" style="background-image:url('banner1.jpg')"></div>
-    <div class="slide" style="background-image:url('banner2.jpg')"></div>
-    <div class="slide" style="background-image:url('banner3.jpg')"></div>
-  </div>
-</section>
-
-<section class="section">
-  <h2>Sobre la nutricionista</h2>
-  <p>
-    Atención nutricional personalizada, enfocada en hábitos reales,
-    acompañamiento continuo y consultas 100% por WhatsApp Business.
-  </p>
-
-  <div class="redes">
-    <a href="https://www.instagram.com/nta.carrielcatalina" target="_blank" aria-label="Instagram">
-      <svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5z"/></svg>
-    </a>
-    <a href="https://www.tiktok.com/@ccarriel_" target="_blank" aria-label="TikTok">
-      <svg viewBox="0 0 24 24"><path d="M16 2c1 2 3 3 5 3v4c-2 0-4-1-5-2v7a6 6 0 1 1-6-6v4a2 2 0 1 0 2 2V2h4z"/></svg>
-    </a>
-  </div>
-</section>
-
-<a class="wsp" href="https://wa.me/56964875731" target="_blank" aria-label="WhatsApp">
-  <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15l-1.4 5 5-1.3A10 10 0 1 0 12 2z"/></svg>
-</a>
-
-</body>
-</html>
+    <
