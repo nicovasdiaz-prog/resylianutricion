@@ -4,268 +4,252 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Resylia Nutrición | Nutrición consciente sin dietas</title>
-  <meta name="description" content="Resylia Nutrición. Acompañamiento nutricional consciente, sin dietas restrictivas. Atención personalizada por WhatsApp.">
+  <title>Resylia Nutrición | Nutrición consciente y acompañamiento personalizado</title>
+  <meta name="description" content="Nutrición consciente, sin dietas restrictivas. Acompañamiento personalizado por WhatsApp. Resylia Nutrición.">
+
+  <!-- SEO básico -->
   <meta name="geo.region" content="CL">
-  <meta name="geo.placename" content="Chile">
   <meta name="language" content="es">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Resylia Nutrición">
-  <meta property="og:description" content="Nutrición consciente, cercana y sin dietas. Acompañamiento personalizado.">
+  <meta property="og:description" content="Nutrición consciente, cercana y sin dietas.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://resylianutri.online">
   <meta property="og:image" content="https://resylianutri.online/banner1.jpg">
 
-  <!-- Iconos reales -->
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
-    :root{
-      --morado:#4B2E83;
-      --verde:#25D366;
-      --blanco:#ffffff;
-      --gris:#f5f5f5;
+    :root {
+      --morado: #4B2E83;
+      --verde: #25D366;
+      --gris: #f5f5f5;
     }
 
-    *{
-      box-sizing:border-box;
-      margin:0;
-      padding:0;
-      font-family:system-ui,-apple-system,BlinkMacSystemFont,sans-serif;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, sans-serif;
     }
 
-    body{
-      background:#fff;
-      color:#333;
-      scroll-behavior:smooth;
+    body {
+      background: #fff;
+      color: #333;
     }
 
-    /* ===== HEADER ===== */
-    header{
-      position:fixed;
-      top:0;
-      width:100%;
-      background:var(--morado);
-      color:white;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:14px 30px;
-      z-index:1000;
+    /* HEADER */
+    header {
+      background: var(--morado);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 30px;
     }
 
-    .logo-container{
-      display:flex;
-      align-items:center;
-      gap:12px;
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
-    .logo-img{
-      height:36px;
+    .logo-img {
+      height: 36px;
     }
 
-    .logo-title{
-      font-weight:600;
-      font-size:18px;
+    .logo-title {
+      font-weight: 600;
+      font-size: 18px;
     }
 
-    nav a{
-      color:white;
-      margin:0 12px;
-      text-decoration:none;
-      font-weight:500;
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: 500;
     }
 
-    .btn-header{
-      background:white;
-      color:var(--morado);
-      padding:10px 18px;
-      border-radius:999px;
-      text-decoration:none;
-      font-weight:600;
+    .btn-header {
+      background: white;
+      color: var(--morado);
+      padding: 8px 16px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: 600;
     }
 
-    /* ===== HERO ===== */
-    .hero{
-      margin-top:78px;
-      position:relative;
-      height:70vh;
-      overflow:hidden;
+    /* HERO / BANNER */
+    .hero {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      background: var(--morado);
     }
 
-    .slides{
-      display:flex;
-      width:300%;
-      height:100%;
-      animation:slide 18s infinite;
+    .slides {
+      display: flex;
+      transition: transform 0.6s ease;
     }
 
-    .slides img{
-      width:100vw;
-      height:100%;
-      object-fit:cover;
-      flex-shrink:0;
+    .hero-slide {
+      min-width: 100%;
+      position: relative;
     }
 
-    @keyframes slide{
-      0%{transform:translateX(0);}
-      33%{transform:translateX(-100vw);}
-      66%{transform:translateX(-200vw);}
-      100%{transform:translateX(0);}
+    .hero-slide img {
+      width: 100%;
+      height: 70vh;
+      min-height: 420px;
+      object-fit: contain;
+      background: var(--morado);
     }
 
-    .hero-overlay{
-      position:absolute;
-      inset:0;
-      background:rgba(0,0,0,.35);
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      align-items:center;
-      text-align:center;
-      color:white;
-      padding:20px;
+    .hero-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+      padding: 0 20px;
     }
 
-    .hero-overlay h1{
-      font-size:52px;
-      margin-bottom:14px;
+    .hero-overlay h1 {
+      font-size: 52px;
+      margin-bottom: 14px;
     }
 
-    .hero-overlay p{
-      font-size:20px;
+    .hero-overlay p {
+      font-size: 20px;
     }
 
-    .dots{
-      position:absolute;
-      bottom:20px;
-      width:100%;
-      text-align:center;
+    /* DOTS */
+    .dots {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      text-align: center;
     }
 
-    .dot{
-      display:inline-block;
-      width:10px;
-      height:10px;
-      margin:0 4px;
-      background:white;
-      border-radius:50%;
-      opacity:.5;
+    .dot {
+      height: 10px;
+      width: 10px;
+      background: #ddd;
+      border-radius: 50%;
+      display: inline-block;
+      margin: 0 4px;
+      opacity: 0.6;
     }
 
-    /* ===== SECTIONS ===== */
-    section{
-      padding:80px 20px;
-      max-width:1100px;
-      margin:auto;
+    .dot.active {
+      opacity: 1;
+      background: white;
     }
 
-    /* ===== SOBRE MI ===== */
-    .about{
-      display:flex;
-      align-items:center;
-      gap:50px;
+    /* SECCIONES */
+    section {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: auto;
     }
 
-    .about-img{
-      position:relative;
-      flex:1;
-      text-align:center;
+    /* SOBRE MI - OPCIÓN A */
+    .about {
+      display: flex;
+      gap: 50px;
+      align-items: center;
     }
 
-    .about-img img{
-      width:100%;
-      max-width:360px;
-      border-radius:50%;
+    .about img {
+      width: 300px;
+      border-radius: 50%;
     }
 
-    .badge{
-      position:absolute;
-      background:var(--morado);
-      color:white;
-      padding:8px 14px;
-      border-radius:20px;
-      font-size:13px;
+    .about-text h2 {
+      color: var(--morado);
+      margin-bottom: 14px;
+      font-size: 32px;
     }
 
-    .b1{top:10%; left:-10px;}
-    .b2{top:40%; right:-10px;}
-    .b3{bottom:15%; left:10px;}
-
-    .about-text{
-      flex:2;
+    .about-text p {
+      margin-bottom: 14px;
+      line-height: 1.6;
     }
 
-    .about-text h2{
-      font-size:34px;
-      margin-bottom:20px;
-      color:var(--morado);
+    .about-text ul {
+      margin: 14px 0 20px 20px;
     }
 
-    .about-text p{
-      margin-bottom:14px;
-      line-height:1.6;
+    .about-text li {
+      margin-bottom: 8px;
     }
 
-    .about-text ul{
-      margin:20px 0;
-      padding-left:20px;
+    .btn-whatsapp {
+      display: inline-block;
+      background: var(--verde);
+      color: white;
+      padding: 12px 22px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
     }
 
-    .about-text li{
-      margin-bottom:8px;
+    /* REDES */
+    .social {
+      text-align: center;
+      margin-top: 40px;
     }
 
-    .btn-main{
-      display:inline-block;
-      margin-top:20px;
-      background:var(--verde);
-      color:white;
-      padding:14px 26px;
-      border-radius:999px;
-      text-decoration:none;
-      font-weight:600;
+    .social a {
+      color: var(--morado);
+      font-size: 26px;
+      margin: 0 10px;
     }
 
-    /* ===== REDES ===== */
-    .socials{
-      text-align:center;
-      margin-top:40px;
+    /* BOTON WHATSAPP FLOAT */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--verde);
+      color: white;
+      border-radius: 50%;
+      width: 55px;
+      height: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      text-decoration: none;
+      z-index: 100;
     }
 
-    .socials a{
-      color:var(--morado);
-      font-size:26px;
-      margin:0 12px;
-    }
+    /* MOBILE */
+    @media (max-width: 768px) {
+      header {
+        flex-wrap: wrap;
+        gap: 10px;
+      }
 
-    /* ===== WHATSAPP FLOAT ===== */
-    .whatsapp{
-      position:fixed;
-      bottom:20px;
-      right:20px;
-      background:var(--verde);
-      color:white;
-      width:56px;
-      height:56px;
-      border-radius:50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:28px;
-      text-decoration:none;
-      z-index:1000;
-    }
+      .hero-overlay h1 {
+        font-size: 32px;
+      }
 
-    /* ===== MOBILE ===== */
-    @media(max-width:768px){
-      nav{display:none;}
-      .hero-overlay h1{font-size:32px;}
-      .hero-overlay p{font-size:16px;}
-      .about{flex-direction:column;}
-      .about-text{text-align:center;}
-      .badge{display:none;}
+      .hero-overlay p {
+        font-size: 16px;
+      }
+
+      .about {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .about img {
+        width: 220px;
+      }
     }
   </style>
 </head>
@@ -287,11 +271,11 @@
   <a class="btn-header" href="https://wa.me/56964875731" target="_blank">QUIERO AGENDAR</a>
 </header>
 
-<section id="inicio" class="hero">
-  <div class="slides">
-    <img src="banner1.jpg">
-    <img src="banner2.jpg">
-    <img src="banner3.jpg">
+<section class="hero" id="inicio">
+  <div class="slides" id="slides">
+    <div class="hero-slide"><img src="banner1.jpg"></div>
+    <div class="hero-slide"><img src="banner2.jpg"></div>
+    <div class="hero-slide"><img src="banner3.jpg"></div>
   </div>
 
   <div class="hero-overlay">
@@ -300,45 +284,61 @@
   </div>
 
   <div class="dots">
-    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+    <span class="dot active"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
   </div>
 </section>
 
 <section id="sobre-mi">
   <div class="about">
-    <div class="about-img">
-      <img src="catalina.jpg" alt="Catalina Carriel">
-      <div class="badge b1">Acompañamiento</div>
-      <div class="badge b2">Sin dietas</div>
-      <div class="badge b3">Hábitos reales</div>
-    </div>
+    <img src="catalina.jpg" alt="Catalina Carriel">
 
     <div class="about-text">
       <h2>Sobre mí</h2>
-      <p>Soy Catalina Carriel, nutricionista (26 años) y mamá. Te ayudo a construir hábitos reales y sostenibles con un plan 100% adaptado a ti.</p>
+
+      <p>
+        Soy Catalina Carriel, nutricionista (26 años) y mamá.  
+        Te ayudo a construir hábitos reales y sostenibles con un plan 100% adaptado a ti.
+      </p>
 
       <ul>
         <li>Mejorar tu alimentación sin pasar hambre</li>
-        <li>Ordenar tus hábitos y relación con la comida</li>
-        <li>Más energía y bienestar diario</li>
+        <li>Ordenar tu relación con la comida</li>
+        <li>Sentirte con más energía y bienestar</li>
         <li>Un plan ajustado a tu estilo de vida</li>
       </ul>
 
-      <p>Trabajo contigo paso a paso para que el cambio sea práctico, real y duradero.</p>
+      <p>
+        Trabajo contigo paso a paso para que el cambio sea práctico, real y duradero.
+      </p>
 
-      <a class="btn-main" href="https://wa.me/56964875731" target="_blank">Quiero agendar</a>
+      <a class="btn-whatsapp" href="https://wa.me/56964875731" target="_blank">Quiero agendar</a>
     </div>
   </div>
 
-  <div class="socials">
+  <div class="social">
     <a href="https://www.instagram.com/resylianutri.online/" target="_blank"><i class="fab fa-instagram"></i></a>
     <a href="https://www.tiktok.com/@ccarriel_" target="_blank"><i class="fab fa-tiktok"></i></a>
   </div>
 </section>
 
-<a class="whatsapp" href="https://wa.me/56964875731" target="_blank">
+<a href="https://wa.me/56964875731" class="whatsapp-float" target="_blank">
   <i class="fab fa-whatsapp"></i>
 </a>
+
+<script>
+let index = 0;
+const slides = document.getElementById("slides");
+const dots = document.querySelectorAll(".dot");
+
+setInterval(() => {
+  index = (index + 1) % 3;
+  slides.style.transform = `translateX(-${index * 100}%)`;
+  dots.forEach(d => d.classList.remove("active"));
+  dots[index].classList.add("active");
+}, 5000);
+</script>
 
 </body>
 </html>
