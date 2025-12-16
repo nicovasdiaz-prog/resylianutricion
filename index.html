@@ -1,299 +1,375 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Resylia Nutrición | Nutrición consciente y acompañamiento personalizado</title>
-<meta name="description" content="Resylia Nutrición ofrece atención nutricional consciente, sin dietas restrictivas. Acompañamiento personalizado y consultas por WhatsApp.">
-<meta name="geo.region" content="CL">
-<meta name="geo.placename" content="Chile">
-<meta name="language" content="es">
-  
-<!-- Open Graph -->
-<meta property="og:title" content="Resylia Nutrición">
-<meta property="og:description" content="Nutrición consciente, cercana y sin dietas. Atención personalizada por WhatsApp.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://resylianutri.online">
-<meta property="og:image" content="https://resylianutri.online/banner1.jpg">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Resylia Nutrición | Nutrición consciente y personalizada</title>
+  <meta name="description" content="Resylia Nutrición ofrece atención nutricional consciente, sin dietas restrictivas. Acompañamiento personalizado y consultas por WhatsApp.">
+  <meta name="geo.region" content="CL">
+  <meta name="geo.placename" content="Chile">
+  <meta name="language" content="es">
 
-<!-- Iconos reales -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Resylia Nutrición">
+  <meta property="og:description" content="Nutrición consciente, cercana y sin dietas. Atención personalizada por WhatsApp.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://resylianutri.online">
+  <meta property="og:image" content="https://resylianutri.online/banner1.jpg">
 
-<style>
-:root{
-  --morado:#4B2E83;
-  --verde:#25D366;
-}
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-  font-family:system-ui,-apple-system,BlinkMacSystemFont,sans-serif;
-}
+  <!-- Google Analytics (GA4) -->
+  <!-- REEMPLAZA G-XXXXXXXXXX POR TU ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 
-body{
-  background:#fff;
-  color:#333;
-}
+  <style>
+    :root{
+      --morado:#4B2E83;
+      --verde:#25D366;
+      --gris:#f5f5f5;
+    }
 
-/* ================= HEADER ================= */
-header{
-  background:var(--morado);
-  color:#fff;
-  padding:14px 28px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  flex-wrap:wrap;
-}
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,sans-serif;
+    }
 
-.brand{
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
+    body{
+      color:#222;
+    }
 
-.brand img{width:36px}
+    /* HEADER */
+    header{
+      background:var(--morado);
+      color:white;
+      padding:18px 40px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:sticky;
+      top:0;
+      z-index:1000;
+    }
 
-nav a{
-  color:#fff;
-  margin:0 10px;
-  text-decoration:none;
-  font-weight:500;
-}
+    header .logo{
+      font-weight:700;
+      font-size:18px;
+    }
 
-.cta{
-  background:#fff;
-  color:var(--morado);
-  padding:8px 16px;
-  border-radius:14px;
-  text-decoration:none;
-  font-weight:600;
-}
+    header nav a{
+      color:white;
+      margin:0 10px;
+      text-decoration:none;
+      font-weight:500;
+    }
 
-/* ================= CARRUSEL ================= */
-.carousel{
-  position:relative;
-  width:100%;
-  height:420px;
-  overflow:hidden;
-  background:#000;
-}
+    .btn-header{
+      background:white;
+      color:var(--morado);
+      padding:10px 20px;
+      border-radius:30px;
+      font-weight:600;
+      text-decoration:none;
+    }
 
-.slide{
-  position:absolute;
-  inset:0;
-  background-repeat:no-repeat;
-  background-position:center;
-  background-size:cover;
-  opacity:0;
-  transition:opacity 1s ease;
-}
+    /* HERO / CARRUSEL */
+    .hero{
+      position:relative;
+      height:65vh;
+      overflow:hidden;
+    }
 
-.slide.active{opacity:1}
+    .slide{
+      position:absolute;
+      inset:0;
+      background-size:cover;
+      background-position:center;
+      opacity:0;
+      transition:opacity 1s ease;
+    }
 
-.slide::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,.35);
-}
+    .slide.active{
+      opacity:1;
+    }
 
-.slide-text{
-  position:relative;
-  z-index:2;
-  height:100%;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  color:#fff;
-  padding:20px;
-}
+    .hero-overlay{
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,0.45);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      color:white;
+      padding:20px;
+    }
 
-.slide-text h2{
-  font-size:2.2rem;
-  margin-bottom:10px;
-}
+    .hero-overlay h1{
+      font-size:40px;
+      margin-bottom:10px;
+    }
 
-.slide-text p{
-  font-size:1.1rem;
-  max-width:600px;
-}
+    .hero-overlay p{
+      font-size:18px;
+    }
 
-/* Puntitos */
-.carousel-dots{
-  position:absolute;
-  bottom:14px;
-  left:50%;
-  transform:translateX(-50%);
-  display:flex;
-  gap:10px;
-  z-index:5;
-}
+    .dots{
+      position:absolute;
+      bottom:20px;
+      left:50%;
+      transform:translateX(-50%);
+      display:flex;
+      gap:8px;
+    }
 
-.dot{
-  width:10px;
-  height:10px;
-  border-radius:50%;
-  background:#fff;
-  opacity:.4;
-  cursor:pointer;
-}
+    .dot{
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background:white;
+      opacity:.4;
+    }
 
-.dot.active{opacity:1;background:#fff}
+    .dot.active{
+      opacity:1;
+    }
 
-/* ================= CONTENIDO ================= */
-.section{
-  max-width:1000px;
-  margin:auto;
-  padding:70px 20px;
-  text-align:center;
-}
+    /* SECCIONES */
+    section{
+      padding:80px 20px;
+    }
 
-.section h2{margin-bottom:14px}
+    .section{
+      max-width:1100px;
+      margin:auto;
+      text-align:center;
+    }
 
-/* Redes */
-.socials{
-  display:flex;
-  justify-content:center;
-  gap:26px;
-  margin-top:20px;
-  font-size:28px;
-}
+    /* SOBRE MI */
+    .about-container{
+      display:grid;
+      grid-template-columns:1fr 1.2fr;
+      gap:60px;
+      align-items:center;
+      text-align:left;
+    }
 
-.socials a{color:var(--morado)}
+    .about-photo-wrapper{
+      position:relative;
+      max-width:360px;
+      margin:auto;
+    }
 
-/* ================= WHATSAPP ================= */
-.wsp{
-  position:fixed;
-  right:20px;
-  bottom:20px;
-  width:56px;
-  height:56px;
-  background:var(--verde);
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#fff;
-  font-size:26px;
-  text-decoration:none;
-  z-index:999;
-}
+    .about-photo{
+      width:100%;
+      border-radius:20px;
+      position:relative;
+      z-index:2;
+    }
 
-/* ================= MOBILE ================= */
-@media(max-width:768px){
-  header{
-    justify-content:center;
-    gap:12px;
-    text-align:center;
-  }
+    .decor-box{
+      position:absolute;
+      border-radius:16px;
+      background:rgba(75,46,131,0.15);
+      z-index:1;
+    }
 
-  nav{width:100%;margin-top:6px}
+    .box-1{width:140px;height:140px;top:-20px;left:-20px;}
+    .box-2{width:100px;height:100px;bottom:-20px;right:-20px;}
+    .box-3{width:60px;height:60px;bottom:40%;left:-30px;}
 
-  .carousel{height:260px}
+    .about-content h2{
+      font-size:32px;
+      margin-bottom:10px;
+      color:var(--morado);
+    }
 
-  .slide-text h2{font-size:1.5rem}
-  .slide-text p{font-size:1rem}
-}
-</style>
+    .about-content h3{
+      margin-top:24px;
+      color:var(--morado);
+    }
+
+    .about-content ul{
+      list-style:none;
+      margin:16px 0;
+    }
+
+    .about-content ul li{
+      margin-bottom:8px;
+    }
+
+    .btn-agendar{
+      display:inline-block;
+      margin-top:20px;
+      padding:14px 28px;
+      background:var(--verde);
+      color:white;
+      border-radius:30px;
+      font-weight:600;
+      text-decoration:none;
+    }
+
+    /* REDES */
+    .socials{
+      margin-top:30px;
+      font-size:26px;
+    }
+
+    .socials a{
+      margin:0 10px;
+      color:var(--morado);
+    }
+
+    /* WHATSAPP FLOAT */
+    .whatsapp-float{
+      position:fixed;
+      bottom:20px;
+      right:20px;
+      background:var(--verde);
+      color:white;
+      width:55px;
+      height:55px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:28px;
+      z-index:1000;
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:900px){
+      header{
+        flex-wrap:wrap;
+        gap:10px;
+      }
+
+      .hero-overlay h1{
+        font-size:28px;
+      }
+
+      .about-container{
+        grid-template-columns:1fr;
+        text-align:center;
+      }
+
+      .decor-box{
+        display:none;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
-  <div class="brand">
-    <img src="resylia_logo_blanco_LIMPIO.png" alt="Resylia">
-    <div>
-      <strong>Resylia Nutrición</strong><br>
-      <small>Nutrición personalizada, cercana y consciente</small>
-    </div>
-  </div>
-
+  <div class="logo">Resylia Nutrición</div>
   <nav>
-    <a href="#">Inicio</a>
-    <a href="#">Sobre mí</a>
-    <a href="#">Contacto</a>
+    <a href="#inicio">Inicio</a>
+    <a href="#sobre-mi">Sobre mí</a>
+    <a href="#contacto">Contacto</a>
   </nav>
-
-  <a class="cta" href="https://wa.me/56964875731" target="_blank">QUIERO AGENDAR</a>
+  <a class="btn-header" href="https://wa.me/56964875731" target="_blank">QUIERO AGENDAR</a>
 </header>
 
-<!-- CARRUSEL -->
-<section class="carousel">
-  <div class="slide active" style="background-image:url('banner1.jpg')">
-    <div class="slide-text">
-      <h2>Nutrición consciente</h2>
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="slide active" style="background-image:url('banner1.jpg')"></div>
+  <div class="slide" style="background-image:url('banner2.jpg')"></div>
+  <div class="slide" style="background-image:url('banner3.jpg')"></div>
+
+  <div class="hero-overlay">
+    <div>
+      <h1>Nutrición consciente</h1>
       <p>Un proceso real, humano y sin dietas</p>
     </div>
   </div>
 
-  <div class="slide" style="background-image:url('banner2.jpg')">
-    <div class="slide-text">
-      <h1>Escucha y acompañamiento</h1>
-      <p>Tu historia importa más que la balanza</p>
-    </div>
-  </div>
-
-  <div class="slide" style="background-image:url('banner3.jpg')">
-    <div class="slide-text">
-      <h2>Hábitos que perduran</h2>
-      <p>Construidos contigo, paso a paso</p>
-    </div>
-  </div>
-
-  <div class="carousel-dots">
+  <div class="dots">
     <span class="dot active"></span>
     <span class="dot"></span>
     <span class="dot"></span>
   </div>
 </section>
 
-<section class="section">
-  <h2>Sobre la nutricionista</h2>
-  <p>
-    Atención nutricional personalizada, enfocada en hábitos reales,
-    acompañamiento continuo y consultas 100% por WhatsApp Business.
-  </p>
+<!-- SOBRE MI -->
+<section id="sobre-mi">
+  <div class="section about-container">
 
-  <div class="socials">
-    <a href="https://www.instagram.com/resylianutri.online" target="_blank">
-      <i class="fab fa-instagram"></i>
-    </a>
-    <a href="https://www.tiktok.com/@ccarriel_" target="_blank">
-      <i class="fab fa-tiktok"></i>
-    </a>
+    <div class="about-photo-wrapper">
+      <span class="decor-box box-1"></span>
+      <span class="decor-box box-2"></span>
+      <span class="decor-box box-3"></span>
+      <img src="catalina.jpg" alt="Catalina Carriel Nutricionista" class="about-photo">
+    </div>
+
+    <div class="about-content">
+      <h2>Soy Catalina Carriel</h2>
+      <p><strong>Nutricionista · Mamá · 26 años</strong></p>
+
+      <p>
+        Te ayudo a construir hábitos reales y sostenibles, con un plan alimenticio
+        100% adaptado a ti, tus objetivos y tu rutina.
+      </p>
+
+      <h3>¿Qué vas a lograr conmigo?</h3>
+      <ul>
+        <li>✔ Mejorar tu alimentación sin pasar hambre</li>
+        <li>✔ Ordenar tus hábitos y tu relación con la comida</li>
+        <li>✔ Más energía y bienestar diario</li>
+        <li>✔ Un plan que se adapta a tu estilo de vida</li>
+      </ul>
+
+      <h3>Mi enfoque</h3>
+      <p>
+        Trabajo contigo paso a paso para lograr cambios reales, prácticos y duraderos,
+        promoviendo tu bienestar desde el interior hacia el exterior.
+      </p>
+
+      <a href="https://wa.me/56964875731" target="_blank" class="btn-agendar">
+        Quiero agendar
+      </a>
+
+      <div class="socials">
+        <a href="https://www.instagram.com/resylianutri.online/" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.tiktok.com/@ccarriel_" target="_blank">
+          <i class="fab fa-tiktok"></i>
+        </a>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<a class="wsp" href="https://wa.me/56964875731" target="_blank">
+<!-- WHATSAPP -->
+<a href="https://wa.me/56964875731" target="_blank" class="whatsapp-float">
   <i class="fab fa-whatsapp"></i>
 </a>
 
 <script>
-const slides=document.querySelectorAll(".slide");
-const dots=document.querySelectorAll(".dot");
-let current=0;
+  let slides=document.querySelectorAll('.slide');
+  let dots=document.querySelectorAll('.dot');
+  let index=0;
 
-function showSlide(i){
-  slides[current].classList.remove("active");
-  dots[current].classList.remove("active");
-  current=i;
-  slides[current].classList.add("active");
-  dots[current].classList.add("active");
-}
-
-dots.forEach((dot,i)=>{
-  dot.addEventListener("click",()=>showSlide(i));
-});
-
-setInterval(()=>{
-  showSlide((current+1)%slides.length);
-},6000);
+  setInterval(()=>{
+    slides[index].classList.remove('active');
+    dots[index].classList.remove('active');
+    index=(index+1)%slides.length;
+    slides[index].classList.add('active');
+    dots[index].classList.add('active');
+  },5000);
 </script>
 
 </body>
