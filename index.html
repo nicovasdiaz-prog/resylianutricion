@@ -4,16 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Resylia Nutrición | Nutrición consciente y acompañamiento personalizado</title>
-  <meta name="description" content="Nutrición consciente, sin dietas restrictivas. Acompañamiento personalizado por WhatsApp. Resylia Nutrición.">
-
-  <!-- SEO básico -->
+  <title>Resylia Nutrición | Nutrición consciente y personalizada</title>
+  <meta name="description" content="Resylia Nutrición ofrece atención nutricional consciente, sin dietas restrictivas. Acompañamiento personalizado y consultas por WhatsApp.">
   <meta name="geo.region" content="CL">
+  <meta name="geo.placename" content="Chile">
   <meta name="language" content="es">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Resylia Nutrición">
-  <meta property="og:description" content="Nutrición consciente, cercana y sin dietas.">
+  <meta property="og:description" content="Nutrición consciente, cercana y sin dietas. Atención personalizada por WhatsApp.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://resylianutri.online">
   <meta property="og:image" content="https://resylianutri.online/banner1.jpg">
@@ -21,234 +20,251 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+  <!-- Google Analytics (GA4) -->
+  <!-- REEMPLAZA G-XXXXXXXXXX POR TU ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
   <style>
-    :root {
-      --morado: #4B2E83;
-      --verde: #25D366;
-      --gris: #f5f5f5;
+    :root{
+      --morado:#4B2E83;
+      --verde:#25D366;
+      --gris:#f5f5f5;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: system-ui, sans-serif;
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,sans-serif;
     }
 
-    body {
-      background: #fff;
-      color: #333;
+    body{
+      color:#222;
     }
 
     /* HEADER */
-    header {
-      background: var(--morado);
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 14px 30px;
+    header{
+      background:var(--morado);
+      color:white;
+      padding:18px 40px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:sticky;
+      top:0;
+      z-index:1000;
     }
 
-    .logo-container {
-      display: flex;
-      align-items: center;
-      gap: 10px;
+    header .logo{
+      font-weight:700;
+      font-size:18px;
     }
 
-    .logo-img {
-      height: 36px;
+    header nav a{
+      color:white;
+      margin:0 10px;
+      text-decoration:none;
+      font-weight:500;
     }
 
-    .logo-title {
-      font-weight: 600;
-      font-size: 18px;
+    .btn-header{
+      background:white;
+      color:var(--morado);
+      padding:10px 20px;
+      border-radius:30px;
+      font-weight:600;
+      text-decoration:none;
     }
 
-    nav a {
-      color: white;
-      margin: 0 10px;
-      text-decoration: none;
-      font-weight: 500;
+    /* HERO / CARRUSEL */
+    .hero{
+      position:relative;
+      height:65vh;
+      overflow:hidden;
     }
 
-    .btn-header {
-      background: white;
-      color: var(--morado);
-      padding: 8px 16px;
-      border-radius: 20px;
-      text-decoration: none;
-      font-weight: 600;
+    .slide{
+      position:absolute;
+      inset:0;
+      background-size:cover;
+      background-position:center;
+      opacity:0;
+      transition:opacity 1s ease;
     }
 
-    /* HERO / BANNER */
-    .hero {
-      position: relative;
-      width: 100%;
-      overflow: hidden;
-      background: var(--morado);
+    .slide.active{
+      opacity:1;
     }
 
-    .slides {
-      display: flex;
-      transition: transform 0.6s ease;
+    .hero-overlay{
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,0.45);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      color:white;
+      padding:20px;
     }
 
-    .hero-slide {
-      min-width: 100%;
-      position: relative;
+    .hero-overlay h1{
+      font-size:40px;
+      margin-bottom:10px;
     }
 
-    .hero-slide img {
-      width: 100%;
-      height: 70vh;
-      min-height: 420px;
-      object-fit: contain;
-      background: var(--morado);
+    .hero-overlay p{
+      font-size:18px;
     }
 
-    .hero-overlay {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      color: white;
-      padding: 0 20px;
+    .dots{
+      position:absolute;
+      bottom:20px;
+      left:50%;
+      transform:translateX(-50%);
+      display:flex;
+      gap:8px;
     }
 
-    .hero-overlay h1 {
-      font-size: 52px;
-      margin-bottom: 14px;
+    .dot{
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background:white;
+      opacity:.4;
     }
 
-    .hero-overlay p {
-      font-size: 20px;
-    }
-
-    /* DOTS */
-    .dots {
-      position: absolute;
-      bottom: 20px;
-      width: 100%;
-      text-align: center;
-    }
-
-    .dot {
-      height: 10px;
-      width: 10px;
-      background: #ddd;
-      border-radius: 50%;
-      display: inline-block;
-      margin: 0 4px;
-      opacity: 0.6;
-    }
-
-    .dot.active {
-      opacity: 1;
-      background: white;
+    .dot.active{
+      opacity:1;
     }
 
     /* SECCIONES */
-    section {
-      padding: 80px 20px;
-      max-width: 1100px;
-      margin: auto;
+    section{
+      padding:80px 20px;
     }
 
-    /* SOBRE MI - OPCIÓN A */
-    .about {
-      display: flex;
-      gap: 50px;
-      align-items: center;
+    .section{
+      max-width:1100px;
+      margin:auto;
+      text-align:center;
     }
 
-    .about img {
-      width: 300px;
-      border-radius: 50%;
+    /* SOBRE MI */
+    .about-container{
+      display:grid;
+      grid-template-columns:1fr 1.2fr;
+      gap:60px;
+      align-items:center;
+      text-align:left;
     }
 
-    .about-text h2 {
-      color: var(--morado);
-      margin-bottom: 14px;
-      font-size: 32px;
+    .about-photo-wrapper{
+      position:relative;
+      max-width:360px;
+      margin:auto;
     }
 
-    .about-text p {
-      margin-bottom: 14px;
-      line-height: 1.6;
+    .about-photo{
+      width:100%;
+      border-radius:20px;
+      position:relative;
+      z-index:2;
     }
 
-    .about-text ul {
-      margin: 14px 0 20px 20px;
+    .decor-box{
+      position:absolute;
+      border-radius:16px;
+      background:rgba(75,46,131,0.15);
+      z-index:1;
     }
 
-    .about-text li {
-      margin-bottom: 8px;
+    .box-1{width:140px;height:140px;top:-20px;left:-20px;}
+    .box-2{width:100px;height:100px;bottom:-20px;right:-20px;}
+    .box-3{width:60px;height:60px;bottom:40%;left:-30px;}
+
+    .about-content h2{
+      font-size:32px;
+      margin-bottom:10px;
+      color:var(--morado);
     }
 
-    .btn-whatsapp {
-      display: inline-block;
-      background: var(--verde);
-      color: white;
-      padding: 12px 22px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 600;
+    .about-content h3{
+      margin-top:24px;
+      color:var(--morado);
+    }
+
+    .about-content ul{
+      list-style:none;
+      margin:16px 0;
+    }
+
+    .about-content ul li{
+      margin-bottom:8px;
+    }
+
+    .btn-agendar{
+      display:inline-block;
+      margin-top:20px;
+      padding:14px 28px;
+      background:var(--verde);
+      color:white;
+      border-radius:30px;
+      font-weight:600;
+      text-decoration:none;
     }
 
     /* REDES */
-    .social {
-      text-align: center;
-      margin-top: 40px;
+    .socials{
+      margin-top:30px;
+      font-size:26px;
     }
 
-    .social a {
-      color: var(--morado);
-      font-size: 26px;
-      margin: 0 10px;
+    .socials a{
+      margin:0 10px;
+      color:var(--morado);
     }
 
-    /* BOTON WHATSAPP FLOAT */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: var(--verde);
-      color: white;
-      border-radius: 50%;
-      width: 55px;
-      height: 55px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 28px;
-      text-decoration: none;
-      z-index: 100;
+    /* WHATSAPP FLOAT */
+    .whatsapp-float{
+      position:fixed;
+      bottom:20px;
+      right:20px;
+      background:var(--verde);
+      color:white;
+      width:55px;
+      height:55px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:28px;
+      z-index:1000;
     }
 
-    /* MOBILE */
-    @media (max-width: 768px) {
-      header {
-        flex-wrap: wrap;
-        gap: 10px;
+    /* RESPONSIVE */
+    @media(max-width:900px){
+      header{
+        flex-wrap:wrap;
+        gap:10px;
       }
 
-      .hero-overlay h1 {
-        font-size: 32px;
+      .hero-overlay h1{
+        font-size:28px;
       }
 
-      .hero-overlay p {
-        font-size: 16px;
+      .about-container{
+        grid-template-columns:1fr;
+        text-align:center;
       }
 
-      .about {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .about img {
-        width: 220px;
+      .decor-box{
+        display:none;
       }
     }
   </style>
@@ -257,30 +273,26 @@
 <body>
 
 <header>
-  <div class="logo-container">
-    <img src="resylia_logo_blanco_LIMPIO.png" class="logo-img" alt="Resylia Nutrición">
-    <span class="logo-title">Resylia Nutrición</span>
-  </div>
-
+  <div class="logo">Resylia Nutrición</div>
   <nav>
     <a href="#inicio">Inicio</a>
     <a href="#sobre-mi">Sobre mí</a>
     <a href="#contacto">Contacto</a>
   </nav>
-
   <a class="btn-header" href="https://wa.me/56964875731" target="_blank">QUIERO AGENDAR</a>
 </header>
 
+<!-- HERO -->
 <section class="hero" id="inicio">
-  <div class="slides" id="slides">
-    <div class="hero-slide"><img src="banner1.jpg"></div>
-    <div class="hero-slide"><img src="banner2.jpg"></div>
-    <div class="hero-slide"><img src="banner3.jpg"></div>
-  </div>
+  <div class="slide active" style="background-image:url('banner1.jpg')"></div>
+  <div class="slide" style="background-image:url('banner2.jpg')"></div>
+  <div class="slide" style="background-image:url('banner3.jpg')"></div>
 
   <div class="hero-overlay">
-    <h1>Nutrición consciente</h1>
-    <p>Un proceso real, humano y sin dietas</p>
+    <div>
+      <h1>Nutrición consciente</h1>
+      <p>Un proceso real, humano y sin dietas</p>
+    </div>
   </div>
 
   <div class="dots">
@@ -290,54 +302,74 @@
   </div>
 </section>
 
+<!-- SOBRE MI -->
 <section id="sobre-mi">
-  <div class="about">
-    <img src="catalina.jpg" alt="Catalina Carriel">
+  <div class="section about-container">
 
-    <div class="about-text">
-      <h2>Sobre mí</h2>
+    <div class="about-photo-wrapper">
+      <span class="decor-box box-1"></span>
+      <span class="decor-box box-2"></span>
+      <span class="decor-box box-3"></span>
+      <img src="catalina.jpg" alt="Catalina Carriel Nutricionista" class="about-photo">
+    </div>
+
+    <div class="about-content">
+      <h2>Soy Catalina Carriel</h2>
+      <p><strong>Nutricionista · Mamá · 26 años</strong></p>
 
       <p>
-        Soy Catalina Carriel, nutricionista (26 años) y mamá.  
-        Te ayudo a construir hábitos reales y sostenibles con un plan 100% adaptado a ti.
+        Te ayudo a construir hábitos reales y sostenibles, con un plan alimenticio
+        100% adaptado a ti, tus objetivos y tu rutina.
       </p>
 
+      <h3>¿Qué vas a lograr conmigo?</h3>
       <ul>
-        <li>Mejorar tu alimentación sin pasar hambre</li>
-        <li>Ordenar tu relación con la comida</li>
-        <li>Sentirte con más energía y bienestar</li>
-        <li>Un plan ajustado a tu estilo de vida</li>
+        <li>✔ Mejorar tu alimentación sin pasar hambre</li>
+        <li>✔ Ordenar tus hábitos y tu relación con la comida</li>
+        <li>✔ Más energía y bienestar diario</li>
+        <li>✔ Un plan que se adapta a tu estilo de vida</li>
       </ul>
 
+      <h3>Mi enfoque</h3>
       <p>
-        Trabajo contigo paso a paso para que el cambio sea práctico, real y duradero.
+        Trabajo contigo paso a paso para lograr cambios reales, prácticos y duraderos,
+        promoviendo tu bienestar desde el interior hacia el exterior.
       </p>
 
-      <a class="btn-whatsapp" href="https://wa.me/56964875731" target="_blank">Quiero agendar</a>
-    </div>
-  </div>
+      <a href="https://wa.me/56964875731" target="_blank" class="btn-agendar">
+        Quiero agendar
+      </a>
 
-  <div class="social">
-    <a href="https://www.instagram.com/resylianutri.online/" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.tiktok.com/@ccarriel_" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <div class="socials">
+        <a href="https://www.instagram.com/resylianutri.online/" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.tiktok.com/@ccarriel_" target="_blank">
+          <i class="fab fa-tiktok"></i>
+        </a>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<a href="https://wa.me/56964875731" class="whatsapp-float" target="_blank">
+<!-- WHATSAPP -->
+<a href="https://wa.me/56964875731" target="_blank" class="whatsapp-float">
   <i class="fab fa-whatsapp"></i>
 </a>
 
 <script>
-let index = 0;
-const slides = document.getElementById("slides");
-const dots = document.querySelectorAll(".dot");
+  let slides=document.querySelectorAll('.slide');
+  let dots=document.querySelectorAll('.dot');
+  let index=0;
 
-setInterval(() => {
-  index = (index + 1) % 3;
-  slides.style.transform = `translateX(-${index * 100}%)`;
-  dots.forEach(d => d.classList.remove("active"));
-  dots[index].classList.add("active");
-}, 5000);
+  setInterval(()=>{
+    slides[index].classList.remove('active');
+    dots[index].classList.remove('active');
+    index=(index+1)%slides.length;
+    slides[index].classList.add('active');
+    dots[index].classList.add('active');
+  },5000);
 </script>
 
 </body>
