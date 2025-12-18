@@ -60,10 +60,18 @@
       top:0;
       z-index:1000;
     }
-
+    
     header .logo{
+      display:flex;
+      align-items:center;
+      gap:10px;
       font-weight:700;
       font-size:18px;
+    }
+    
+    header .logo img{
+      height:28px;
+      width:auto;
     }
 
     header nav a{
@@ -85,7 +93,7 @@
     /* HERO / CARRUSEL */
     .hero{
       position:relative;
-      height:65vh;
+      height:45vh;
       overflow:hidden;
     }
 
@@ -115,12 +123,12 @@
     }
 
     .hero-overlay h1{
-      font-size:40px;
-      margin-bottom:10px;
+      font-size:53px;
+      margin-bottom:14px;
     }
 
     .hero-overlay p{
-      font-size:18px;
+      font-size:22px;
     }
 
     .dots{
@@ -255,7 +263,11 @@
       }
 
       .hero-overlay h1{
-        font-size:28px;
+        font-size:34px;
+      }
+
+      .hero-overlay p{
+        font-size:18px;
       }
 
       .about-container{
@@ -273,7 +285,10 @@
 <body>
 
 <header>
-  <div class="logo">Resylia Nutrición</div>
+<div class="logo">
+  <img src="resylia_logo_blanco_LIMPIO.png" alt="Resylia Nutrición">
+  <span>Resylia Nutrición</span>
+</div>
   <nav>
     <a href="#inicio">Inicio</a>
     <a href="#sobre-mi">Sobre mí</a>
